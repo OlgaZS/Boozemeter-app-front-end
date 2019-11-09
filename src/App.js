@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PrivateView from './views/PrivateView';
+import AddEventView from './views/AddEventView';
+import EventsView from './views/EventsView';
+import StatisticsView from './views/StatisticsView';
 import Login from './views/auth/Login';
 import Signup from './views/auth/Signup';
 import { withAuth } from './Context/AuthContext';
@@ -21,6 +24,9 @@ class App extends Component {
           <Switch>
             <AnonRoute exact path="/login" component={Login} />
             <AnonRoute exact path="/signup" component={Signup} />
+            <PrivateRoute exact path="/add-event" component={AddEventView} />
+            <PrivateRoute exact path="/events" component={EventsView} />
+            <PrivateRoute exact path="/statistics" component={StatisticsView} />
             <PrivateRoute exact path="/private" component={PrivateView} />
           </Switch>
           <Footer />

@@ -6,9 +6,9 @@ class Footer extends Component {
   render() {
     return (
       <div className="app-footer">
-        <Link className="link-add-event" to="/" />
+        <Link className="link-add-event" to="/add-event" />
         <Link className="link-calendar" to="/events" />
-        <Link className="link-statistics" to="/" />
+        <Link className="link-statistics" to="/statistics" />
       </div>
     );
   }
