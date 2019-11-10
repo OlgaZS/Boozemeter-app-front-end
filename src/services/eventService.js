@@ -13,7 +13,15 @@ class EventService {
   }
 
   getEvent(eventId) {
-    return this.event.get('/event/' + eventId).then(({ data }) => data);
+    return this.event.get(`/event/${eventId}`).then(({ data }) => data);
+  }
+
+  getDrinkLabels() {
+    return this.event.get('/drink').then(({ data }) => data);
+  }
+
+  getHealthLabels() {
+    return this.event.get('/health').then(({ data }) => data);
   }
 }
 
