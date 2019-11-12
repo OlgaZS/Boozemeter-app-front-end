@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import BoozeCalendar from '../components/BoozeCalendar';
 
 class EventsView extends Component {
-  // eslint-disable-next-line class-methods-use-this
   render() {
-    return <div>Privet! aqui va Calendar with EventsView</div>;
+    return (
+      <div className="events-list-calendar">
+        <BoozeCalendar />
+      </div>
+    );
   }
 }
 
