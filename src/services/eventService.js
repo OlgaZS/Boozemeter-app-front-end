@@ -23,6 +23,10 @@ class EventService {
   getHealthLabels() {
     return this.event.get('/health').then(({ data }) => data);
   }
+
+  addEvent(eventData) {
+    return this.event.post('/events', eventData).then(({ data }) => data);
+  }
 }
 
 const eventService = new EventService();

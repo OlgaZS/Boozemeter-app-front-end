@@ -29,7 +29,45 @@ class AddEvent extends Component {
         type: 'All is fine',
       }),
     );
-  }
+
+    handleChange = event => {
+      const { name, value } = event.target;
+      this.setState({
+        [name]: value,
+      });
+    };
+
+ handleSubmit = event => {
+    const { name, type, percentage, cost, volume, health } = this.state;
+    const newEvent = { name, type, percentage, cost, volume, health };
+    eventService
+      .addEvent(newEvent)
+      .then(data =>
+        this.setState({
+            result: "Drink added",
+        }),
+       ) 
+       .catch(err =>
+        this.setState({
+          result: err.response.data.code,
+        }),
+      );
+ };
+  
+ 
+ render(){
+    const { result, name, type, percentage, cost, volume, health, drinkLabels, healthLabels } = this.state;
+    
+
+
+
+
+
+
+ }
+
+
+ 
 }
 
-export default withRouter(AddEvent);
+export default withRouter(AddEvent);;
