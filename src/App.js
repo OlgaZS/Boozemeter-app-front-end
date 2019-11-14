@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import PrivateView from './views/PrivateView';
 import AddEventView from './views/AddEventView';
 import EventsView from './views/EventsView';
+import EventView from './views/EventView';
 import StatisticsView from './views/StatisticsView';
 import Login from './views/auth/Login';
 import Signup from './views/auth/Signup';
@@ -26,6 +27,7 @@ class App extends Component {
             <AnonRoute exact path="/signup" component={Signup} />
             <PrivateRoute exact path="/add-event" component={AddEventView} />
             <PrivateRoute exact path="/events" component={EventsView} />
+            <PrivateRoute exact path="/event/:eventId" component={EventView} />
             <PrivateRoute exact path="/statistics" component={StatisticsView} />
             <PrivateRoute exact path="/private" component={PrivateView} />
           </Switch>

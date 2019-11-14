@@ -16,6 +16,14 @@ class EventService {
     return this.event.get(`/event/${eventId}`).then(({ data }) => data);
   }
 
+  // getEvent(date) {
+  //   return this.event.get(`/event/${eventId}`).then(({ data }) => data);
+  // }
+
+  getEventsByDate(date) {
+    return this.event.get('/date-events/' + date).then(({ data }) => data);
+  }
+
   getDrinkLabels() {
     return this.event.get('/drink').then(({ data }) => data);
   }
