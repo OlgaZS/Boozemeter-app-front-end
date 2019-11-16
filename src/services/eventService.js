@@ -21,7 +21,7 @@ class EventService {
   // }
 
   getEventsByDate(date) {
-    return this.event.get('/date-events/' + date).then(({ data }) => data);
+    return this.event.get(`/date-events/${date}`).then(({ data }) => data);
   }
 
   getDrinkLabels() {

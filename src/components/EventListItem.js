@@ -10,7 +10,7 @@ class EventListItem extends Component {
     const { drink, cost, volume, health } = data;
 
     return (
-      <Link to={'/event/' + data._id} className="event-list-item">
+      <Link to={`/event/${data._id}`} className="event-list-item">
         <span className="event-date">{getFormattedDateString(eventDate)}</span>
         <div className="event-drink">
           <img src={getDrinkImagePath(drink.type)} style={{ height: '53px' }} alt="" />
