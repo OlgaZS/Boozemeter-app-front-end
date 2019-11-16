@@ -8,7 +8,6 @@ class EventsView extends Component {
   state = {
     events: [],
     date: new Date().getTime(),
-    // event array[]?
   };
 
   handleChange = day => {
@@ -36,12 +35,14 @@ class EventsView extends Component {
     const { date } = this.state;
 
     return (
-      <div className="">
-        <div className="">
+      <div className="events-list-screen">
+        <div className="events-list-calendar">
           <Calendar selectedDays={new Date(date)} onDayClick={this.handleChange} />
         </div>
-        <div className="">
-          <div className="">
+        <div className="events-list-data">
+          {/* div.events-list-data-inner is needed to set scrollbar inside div.events-list-data */}
+          <div className="events-list-data-inner">
+            {/* Mapping all events, each event renders EventListItem component */}
             {this.state.events.map(item => {
               return <EventListItem eventDate={date} data={item} key={item._id} />;
             })}

@@ -34,7 +34,7 @@ class EventView extends Component {
             <span>{drink.name}</span>
           </div>
           <div className="event-detail-volume">
-            <span className="event-detail-numeric">{(volume / 1000).toFixed(3)}</span>
+            <span className="event-detail-numeric">{(volume / 1000).toFixed(1)}</span>
             <span>litres</span>
           </div>
           <div className="event-detail-percent">
@@ -42,7 +42,7 @@ class EventView extends Component {
             <span>alcohol</span>
           </div>
           <div className="event-detail-cost">
-            <span>{(cost / 100).toFixed(2)}</span>
+            <span>{(cost / 100).toFixed(1)}</span>
             <span>euro</span>
           </div>
           <div className="event-detail-health">
