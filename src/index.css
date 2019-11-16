@@ -229,14 +229,16 @@ code {
   margin-top: 15px;
 }
 
-.login-screen form input,
+/* .login-screen form input,
 .signup-screen form input {
   width: 100%;
   padding: 5px;
   outline: 0;
   border: 1px solid #d7d8db;
   box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
-}
+} */
+
+/* Events */
 
 .events-user-data {
   text-align: center;
@@ -335,9 +337,7 @@ code {
   z-index: 10;
 }
 
-.rlc-details {
-  display: none !important;
-}
+/* footer */
 
 .app-footer {
   display: flex;
@@ -364,22 +364,17 @@ code {
   background-size: 90px auto;
 }
 
+.app-footer {
+  background: #fdfdfe url('/images/3.jpg') center center no-repeat;
+  background-size: 75px auto;
+}
+
 .app-footer .link-statistics {
   background: #fdfdfe url('/images/3.jpg') center center no-repeat;
   background-size: 75px auto;
 }
 
-.range-label {
-  width: 100%;
-  /*border-radius: 13px;*/
-  background-color: red;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 500;
-  color: #fff;
-  padding: 5px 15px;
-}
-
+/* add event */
 .add-event-view {
   position: relative;
   flex: 1;
@@ -476,27 +471,6 @@ code {
   position: relative;
 }
 
-.update-view-inner {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.user-image-box {
-  flex: 0 0 220px;
-  width: 220px;
-  background: transparent url('/images/user-big.png') center center no-repeat;
-  background-size: contain;
-  margin-bottom: 25px;
-}
-
 .event-detail {
   position: relative;
   width: 100%;
@@ -562,34 +536,4 @@ code {
 .event-detail-inner > div > :last-child {
   font-size: 14px;
   font-weight: 500;
-}
-
-.start-logo {
-  flex: 0 0 auto;
-  margin-top: 12px;
-  max-width: 280px;
-}
-
-.start-text {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #222222;
-  max-width: 320px;
-  text-align: center;
-  font-size: 22px;
-  line-height: 32px;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.header-logo {
-  flex: 1;
-  z-index: 10;
-  position: relative;
-  height: 50px;
-  background: transparent url(/images/header-logo.jpg) center center no-repeat;
-  background-size: 250px auto;
-  margin-left: 72px;
 }

@@ -22,6 +22,7 @@ class EventView extends Component {
       <div className="event-detail">
         <div className="event-detail-inner">
           <span className="event-detail-date">
+            {/* go back link */}
             <Link to="/events">
               <img src={process.env.PUBLIC_URL + '/images/back.png'} className="back" alt="" width="40" />
             </Link>

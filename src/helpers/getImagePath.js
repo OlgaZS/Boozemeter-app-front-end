@@ -3,6 +3,8 @@ export const getDrinkImagePath = type => {
   switch (type) {
     case 'Beer':
       return imagesPath + 'beer.png';
+    case 'Vodka':
+      return imagesPath + 'wine.png';
     default:
       return imagesPath + 'beer.png';
   }

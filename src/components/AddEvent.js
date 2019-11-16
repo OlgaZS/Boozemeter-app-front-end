@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
 import eventService from '../services/eventService';
+
+/* https://react-day-picker.js.org/docs/input */
 
 class AddEvent extends Component {
   state = {
@@ -39,15 +42,20 @@ class AddEvent extends Component {
     });
   };
 
+  handleDateChange = date => {
+    this.setState({ date: date.getTime() });
+  };
+
   handleSubmit = event => {
     event.preventDefault();
-    const { name, type, percentage, cost, volume, health } = this.state;
-    const newEvent = { name, type, percentage, cost, volume, health };
+    const { date, name, type, percentage, cost, volume, health } = this.state;
+    const newEvent = { date, name, type, percentage, cost, volume, health };
+    console.log(this.state);
     eventService
       .addEvent(newEvent)
       .then(data =>
         this.setState({
-          result: 'Drink added',
+          result: 'Successfully added',
         }),
       )
       .catch(err =>
@@ -61,7 +69,12 @@ class AddEvent extends Component {
     const { result, name, type, percentage, cost, volume, health, drinkLabels, healthLabels } = this.state;
     return (
       <div className="add-event-form">
+        {result ? <div className="event-form-result">{result}</div> : null}
         <form noValidate onSubmit={this.handleSubmit}>
+          <div className="input-group">
+            <label className="name-label">Date:</label>
+            <DayPickerInput onDayChange={this.handleDateChange} />
+          </div>
           <div className="input-group">
             <label className="name-label">Name:</label>
             <input type="text" name="name" value={name} onChange={this.handleChange} />
