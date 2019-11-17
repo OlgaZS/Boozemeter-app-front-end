@@ -9,6 +9,7 @@ import EventView from './views/EventView';
 import StatisticsView from './views/StatisticsView';
 import Login from './views/auth/Login';
 import Signup from './views/auth/Signup';
+import UpdateView from './views/UpdateView';
 import { withAuth } from './Context/AuthContext';
 
 import PrivateRoute from './components/PrivateRoute';
@@ -25,6 +26,8 @@ class App extends Component {
           <Switch>
             <AnonRoute exact path="/login" component={Login} />
             <AnonRoute exact path="/signup" component={Signup} />
+            {/* Private route for updating username */}
+            <PrivateRoute exact path="/update" component={UpdateView} />
             <PrivateRoute exact path="/add-event" component={AddEventView} />
             <PrivateRoute exact path="/events" component={EventsView} />
             <PrivateRoute exact path="/event/:eventId" component={EventView} />

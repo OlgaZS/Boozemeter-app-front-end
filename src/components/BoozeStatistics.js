@@ -12,18 +12,18 @@ class BoozeStatistics extends Component {
     freqHealth: null,
   };
 
-  componentDidMount() {
-    const { type, days } = this.props;
-    eventService.getStatistics(type).then(data =>
-      this.setState({
-        isLoading: false,
-        boozeTime: data.boozeTime,
-        favDrink: data.favDrink,
-        moneySpent: data.moneySpent,
-        freqHealth: data.freqHealth,
-      }),
-    );
-  }
+  // componentDidMount() {
+  //   const { type, days } = this.props;
+  //   eventService.getStatistics(type, days).then(data =>
+  //     this.setState({
+  //       isLoading: false,
+  //       boozeTime: data.boozeTime,
+  //       favDrink: data.favDrink,
+  //       moneySpent: data.moneySpent,
+  //       freqHealth: data.freqHealth,
+  //     }),
+  //   );
+  // }
 
   render() {
     const { isLoading, boozeTime, favDrink, moneySpent, freqHealth } = this.state;

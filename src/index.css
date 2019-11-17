@@ -101,6 +101,15 @@ code {
   font-weight: 500;
 }
 
+.app-header .app-user-logo {
+  margin-right: 15px;
+  width: 36px;
+  height: 36px;
+  background: transparent url('/images/user.png') center center no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
 .logout-btn,
 .login-link,
 .login-submit-btn,
