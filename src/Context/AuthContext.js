@@ -12,12 +12,13 @@ export const withAuth = Comp => {
     render() {
       return (
         <AuthConsumer>
-          {({ isLoading, isLoggedin, user, handleLogin, handleLogout }) => (
+          {({ isLoading, isLoggedin, user, handleSignup, handleLogin, handleLogout }) => (
             <Comp
               {...this.props}
               isLoading={isLoading}
               isLoggedin={isLoggedin}
               user={user}
+              handleSignup={handleSignup}
               handleLogin={handleLogin}
               handleLogout={handleLogout}
             />
@@ -71,6 +72,23 @@ export default class AuthProvider extends Component {
       });
   };
 
+  handleSignup = user => {
+    authService
+      .signup(user)
+      .then(loggedUser => {
+        this.setState({
+          isLoggedin: true,
+          user: loggedUser,
+          isLoading: false,
+        });
+      })
+      .catch(() => {
+        this.setState({
+          isLoading: false,
+        });
+      });
+  };
+
   handleLogout = () => {
     this.setState({
       isLoading: true,
@@ -105,6 +123,7 @@ export default class AuthProvider extends Component {
             isLoading,
             isLoggedin,
             user,
+            handleSignup: this.handleSignup,
             handleLogin: this.handleLogin,
             handleLogout: this.handleLogout,
           }}

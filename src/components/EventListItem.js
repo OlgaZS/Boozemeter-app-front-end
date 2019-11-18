@@ -17,11 +17,11 @@ class EventListItem extends Component {
           <span>{drink.name}</span>
         </div>
         <div className="event-volume">
-          <span className="event-numeric">{(volume / 1000).toFixed(3)}</span>
+          <span className="event-numeric">{(volume / 1000).toFixed(1)}</span>
           <span>litres</span>
         </div>
         <div className="event-cost">
-          <span className="event-numeric">{(cost / 100).toFixed(2)}</span>
+          <span className="event-numeric">{(cost / 100).toFixed(1)}</span>
           <span>euro</span>
         </div>
         <div className="event-health">

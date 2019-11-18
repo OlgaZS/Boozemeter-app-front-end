@@ -36,13 +36,10 @@ class EventService {
     return this.event.post('/events', eventData).then(({ data }) => data);
   }
 
-  /* back-end   router.get(
-  '/statistics/user/:days';  */
-
   /* 'type' can be 'user' or 'group' */
-  // getStatistics(type) {
-  //   return this.event.get(`/statistics/${type}/:${days}`).then(({ data }) => data);
-  // }
+  getStatistics(type, days) {
+    return this.event.get(`/statistics/${type}/${days}`).then(({ data }) => data);
+  }
 }
 
 const eventService = new EventService();

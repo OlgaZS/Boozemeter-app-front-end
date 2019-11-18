@@ -6,29 +6,54 @@ import eventService from '../services/eventService';
 class BoozeStatistics extends Component {
   state = {
     isLoading: true,
+    days: 7,
     boozeTime: null,
     favDrink: null,
     moneySpent: null,
     freqHealth: null,
   };
 
-  // componentDidMount() {
-  //   const { type, days } = this.props;
-  //   eventService.getStatistics(type, days).then(data =>
-  //     this.setState({
-  //       isLoading: false,
-  //       boozeTime: data.boozeTime,
-  //       favDrink: data.favDrink,
-  //       moneySpent: data.moneySpent,
-  //       freqHealth: data.freqHealth,
-  //     }),
-  //   );
-  // }
+  componentDidMount() {
+    const { type } = this.props;
+    const { days } = this.state;
+    eventService.getStatistics(type, days).then(data =>
+      this.setState({
+        isLoading: false,
+        boozeTime: data.boozeTime,
+        favDrink: data.favDrink,
+        moneySpent: data.moneySpent,
+        freqHealth: data.freqHealth,
+      }),
+    );
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const { type } = this.props;
+    const { days } = this.state;
+    eventService.getStatistics(type, days).then(data =>
+      this.setState({
+        isLoading: false,
+        boozeTime: data.boozeTime,
+        favDrink: data.favDrink,
+        moneySpent: data.moneySpent,
+        freqHealth: data.freqHealth,
+      }),
+    );
+  };
+
+  handleChange = event => {
+    const days = parseInt(event.target.value);
+    this.setState({
+      days: days && days > 0 ? days : 7,
+    });
+  };
 
   render() {
     const { isLoading, boozeTime, favDrink, moneySpent, freqHealth } = this.state;
     /* type - 'group' or 'user' - type of displayed data */
-    const { type, days } = this.props;
+    const { type } = this.props;
+    const { days } = this.state;
 
     /* time right now (in ms) */
     const periodEnd = new Date().getTime();
@@ -41,6 +66,10 @@ class BoozeStatistics extends Component {
           <div>Loading...</div>
         ) : (
           <>
+            <form noValidate onSubmit={this.handleSubmit}>
+              <input type="number" value={days} onChange={this.handleChange} />
+              <button type="submit">OK</button>
+            </form>
             {/* different headers despite of component's type */}
             <div className="statistics-heading">{type === 'group' ? 'Group' : 'Your'} Statistics</div>
             <span className="statistics-period">
