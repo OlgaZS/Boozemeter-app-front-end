@@ -26,13 +26,13 @@ class EventView extends Component {
             <Link to="/events">
               <img src={process.env.PUBLIC_URL + '/images/back.png'} className="back" alt="" width="40" />
             </Link>
-            <span>{getFormattedDateString(new Date(date).getTime())}</span>
+            <span>Details of the drink. Day: {getFormattedDateString(new Date(date).getTime())}</span>
           </span>
           <div className="event-detail-drink">
             <div>
               <img src={getDrinkImagePath(drink.type)} style={{ height: '53px' }} alt="" />
             </div>
-            <span>{drink.name}</span>
+            <span>{drink.type}</span>
           </div>
           <div className="event-detail-volume">
             <span className="event-detail-numeric">{(volume / 1000).toFixed(1)}</span>

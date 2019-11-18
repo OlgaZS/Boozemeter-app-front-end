@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import PrivateView from './views/PrivateView';
 import AddEventView from './views/AddEventView';
-import EventsView from './views/EventsView';
+import CalendarView from './views/CalendarView';
 import EventView from './views/EventView';
 import StatisticsView from './views/StatisticsView';
 import Login from './views/auth/Login';
@@ -29,7 +29,7 @@ class App extends Component {
             {/* Private route for updating username */}
             <PrivateRoute exact path="/update" component={UpdateView} />
             <PrivateRoute exact path="/add-event" component={AddEventView} />
-            <PrivateRoute exact path="/events" component={EventsView} />
+            <PrivateRoute exact path="/events" component={CalendarView} />
             <PrivateRoute exact path="/event/:eventId" component={EventView} />
             <PrivateRoute exact path="/statistics" component={StatisticsView} />
             <PrivateRoute exact path="/private" component={PrivateView} />

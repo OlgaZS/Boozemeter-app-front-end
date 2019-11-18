@@ -6,9 +6,11 @@ class Footer extends Component {
   render() {
     return (
       <div className="app-footer">
-        <Link className="link-add-event" to="/add-event" />
-        <Link className="link-calendar" to="/events" />
-        <Link className="link-statistics" to="/statistics" />
+        <div className="app-footer-content">
+          <Link className="link-add-event" to="/add-event" />
+          <Link className="link-calendar" to="/events" />
+          <Link className="link-statistics" to="/statistics" />
+        </div>
       </div>
     );
   }

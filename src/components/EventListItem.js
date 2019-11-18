@@ -5,13 +5,13 @@ import { getDrinkImagePath, getHealthImagePath } from '../helpers/getImagePath';
 
 class EventListItem extends Component {
   render() {
-    /* data prop is passed from EventsView */
+    /* data prop is passed from CalendarView */
     const { eventDate, data } = this.props;
     const { drink, cost, volume, health } = data;
 
     return (
       <Link to={`/event/${data._id}`} className="event-list-item">
-        <span className="event-date">{getFormattedDateString(eventDate)}</span>
+        {/* <span className="event-date">{getFormattedDateString(eventDate)}</span> */}
         <div className="event-drink">
           <img src={getDrinkImagePath(drink.type)} style={{ height: '53px' }} alt="" />
           <span>{drink.name}</span>

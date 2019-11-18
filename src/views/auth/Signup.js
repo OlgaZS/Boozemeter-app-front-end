@@ -27,20 +27,22 @@ class Signup extends Component {
     return (
       <div className="signup-screen">
         <div className="signup-screen-inner">
-          <form onSubmit={this.handleFormSubmit}>
-            <label className="username-label">Username:</label>
-            <input type="text" name="username" value={username} onChange={this.handleChange} />
-            <label className="password-label">Password:</label>
-            <input type="password" name="password" value={password} onChange={this.handleChange} />
-            <button type="submit" className="signup-submit-btn">
-              Signup
-            </button>
-          </form>
+          <div className="signup-screen-content">
+            <form onSubmit={this.handleFormSubmit}>
+              <label className="username-label">Username:</label>
+              <input type="text" name="username" value={username} onChange={this.handleChange} />
+              <label className="password-label">Password:</label>
+              <input type="password" name="password" value={password} onChange={this.handleChange} />
+              <button type="submit" className="signup-submit-btn">
+                Signup
+              </button>
+            </form>
 
-          <p className="switch-auth">
-            Already have account? <br />
-            <Link to={'/login'}> Login</Link>
-          </p>
+            <p className="switch-auth">
+              Already have account? <br />
+              <Link to={'/login'}> Login</Link>
+            </p>
+          </div>
         </div>
       </div>
     );
