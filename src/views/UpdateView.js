@@ -43,7 +43,7 @@ class UpdateView extends Component {
             <form noValidate onSubmit={this.handleSubmit}>
               <input type="text" name="username" value={username} onChange={this.handleChange} />
               <button type="submit" className="update-submit-btn">
-                Update
+                Update username
               </button>
             </form>
           </div>

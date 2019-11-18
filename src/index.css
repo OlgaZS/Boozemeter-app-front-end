@@ -169,8 +169,8 @@ code {
 
 .app-header .app-user-logo {
   margin-right: 15px;
-  width: 36px;
-  height: 36px;
+  width: 26px;
+  height: 26px;
   background: transparent url('/images/user.png') center center no-repeat;
   background-size: contain;
   cursor: pointer;
@@ -329,7 +329,8 @@ code {
 }
 
 .view-heading {
-  font-size: 24px;
+  font-size: 13px;
+  text-transform: uppercase;
   line-height: 24px;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
@@ -695,17 +696,18 @@ code {
 
 .statistics-heading,
 .statistics-period {
-  font-size: 24px;
+  font-size: 13px;
+  text-transform: uppercase;
   line-height: 24px;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
 }
 
-.statistics-period {
+/* .statistics-period {
   margin: 5px 0;
   font-size: 16px;
   line-height: 16px;
-}
+} */
 
 .statistics-data {
   flex: 1 1 auto;
@@ -722,7 +724,7 @@ code {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   align-items: center;
 }
 
@@ -732,17 +734,18 @@ code {
 
 .statistics-data > div > .statistics-description {
   position: relative;
-  flex: 0 0 125px;
+  flex: 0 0 75px;
   padding-bottom: 15px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  color: #b61018;
-  font-size: 20px;
+  /* align-items: center; */
+  color: #5f5560;
+  font-size: 13px;
+  text-transform: uppercase;
   line-height: 25px;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
-  writing-mode: vertical-rl;
+  /* writing-mode: vertical-rl; */
   text-orientation: mixed;
 }
 
@@ -839,10 +842,11 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #222222;
+  color: #5f5560;
   max-width: 320px;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
+  text-transform: uppercase;
   line-height: 32px;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;

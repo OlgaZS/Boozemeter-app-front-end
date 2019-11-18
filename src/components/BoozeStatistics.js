@@ -73,7 +73,7 @@ class BoozeStatistics extends Component {
             {/* different headers despite of component's type */}
             <div className="statistics-heading">{type === 'group' ? 'Group' : 'Your'} Statistics</div>
             <span className="statistics-period">
-              {getFormattedDateString(periodStart)} - {getFormattedDateString(periodEnd)}
+              Period: {getFormattedDateString(periodStart)} - {getFormattedDateString(periodEnd)}
             </span>
             <div className="statistics-data">
               <div className="statistics-days">

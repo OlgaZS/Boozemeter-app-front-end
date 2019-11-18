@@ -18,7 +18,6 @@ class CalendarView extends Component {
     });
 
     eventService.getEventsByDate(date).then(data => this.setState({ events: data }));
-    console.log('CalendarView: date in ms ', date);
   };
 
   componentDidMount() {
