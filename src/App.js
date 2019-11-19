@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import PrivateView from './views/PrivateView';
+// import PrivateView from './views/PrivateView';
 import AddEventView from './views/AddEventView';
 import CalendarView from './views/CalendarView';
 import EventView from './views/EventView';
@@ -32,7 +32,7 @@ class App extends Component {
             <PrivateRoute exact path="/events" component={CalendarView} />
             <PrivateRoute exact path="/event/:eventId" component={EventView} />
             <PrivateRoute exact path="/statistics" component={StatisticsView} />
-            <PrivateRoute exact path="/private" component={PrivateView} />
+            {/* <PrivateRoute exact path="/private" component={PrivateView} /> */}
           </Switch>
           <Footer />
         </Router>

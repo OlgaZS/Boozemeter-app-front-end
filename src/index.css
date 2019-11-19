@@ -90,6 +90,10 @@ code {
   flex: 0 0 70px;
 }
 
+.app-user-greeting {
+  font-weight: 600;
+}
+
 .app-header-content {
   height: 100%;
   width: 100%;
@@ -748,19 +752,6 @@ code {
   /* writing-mode: vertical-rl; */
   text-orientation: mixed;
 }
-
-/*.statistics-data > div > .statistics-description:after {*/
-/*content: "";*/
-/*display: block;*/
-/*position: absolute;*/
-/*background: transparent url("/images/arrow.png") center center no-repeat;*/
-/*background-size: contain;*/
-/*width: 30px;*/
-/*height: 76px;*/
-/*bottom: 0;*/
-/*left: 2px;*/
-/*transform: rotate(-20deg);*/
-/*}*/
 
 .statistics-data > div > .statistics-image {
   flex: 0 1 55px;

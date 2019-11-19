@@ -102,7 +102,7 @@ class AddEvent extends Component {
             <input type="text" name="volume" value={volume} onChange={this.handleChange} />
           </div>
           <div className="input-group">
-            <label className="health-label">Type:</label>
+            <label className="health-label">Health:</label>
             <select name="health" value={health} onChange={this.handleChange}>
               {healthLabels.map(item => (
                 <option value={item} key={item}>
