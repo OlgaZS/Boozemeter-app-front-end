@@ -23,11 +23,12 @@ class EventView extends Component {
         <div className="event-detail-inner">
           <span className="event-detail-date">
             {/* go back link */}
-            <Link to="/events">
+            <Link to="/events" className="back-img-box">
               <img src={process.env.PUBLIC_URL + '/images/back.png'} className="back" alt="" width="40" />
             </Link>
             <span>Details of the drink. Day: {getFormattedDateString(new Date(date).getTime())}</span>
           </span>
+
           <div className="event-detail-drink">
             <div>
               <img src={getDrinkImagePath(drink.type)} style={{ height: '53px' }} alt="" />
