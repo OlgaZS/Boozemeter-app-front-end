@@ -16,9 +16,9 @@ class EventService {
     return this.event.get(`/event/${eventId}`).then(({ data }) => data);
   }
 
-  // getEvent(date) {
-  //   return this.event.get(`/event/${eventId}`).then(({ data }) => data);
-  // }
+  deleteEvent(eventId) {
+    return this.event.delete('/event/' + eventId).then(({ data }) => data);
+  }
 
   getEventsByDate(date) {
     return this.event.get(`/date-events/${date}`).then(({ data }) => data);

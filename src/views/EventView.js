@@ -15,6 +15,13 @@ class EventView extends Component {
     eventService.getEvent(eventId).then(data => this.setState({ eventData: data }));
   }
 
+  handleDeleteClick = () => {
+    const { eventId } = this.props.match.params;
+    eventService
+      .deleteEvent(eventId)
+      .then(data => this.setState({ eventData: data }, () => this.props.history.push('/events')));
+  };
+
   render() {
     const { date, drink, cost, volume, health, _id } = this.state.eventData;
     if (!_id) return null;
@@ -27,6 +34,9 @@ class EventView extends Component {
               <img src={process.env.PUBLIC_URL + '/images/back.png'} className="back" alt="" width="40" />
             </Link>
             <span>Details of the drink. Day: {getFormattedDateString(new Date(date).getTime())}</span>
+            <div className="delete-img-box" onClick={this.handleDeleteClick}>
+              <img src={process.env.PUBLIC_URL + '/images/delete.png'} className="delete" alt="" />
+            </div>
           </span>
 
           <div className="event-detail-drink">

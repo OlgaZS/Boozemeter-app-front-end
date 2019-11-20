@@ -50,7 +50,6 @@ class AddEvent extends Component {
     event.preventDefault();
     const { date, name, type, percentage, cost, volume, health } = this.state;
     const newEvent = { date, name, type, percentage, cost, volume, health };
-    console.log(this.state);
     eventService
       .addEvent(newEvent)
       .then(data =>
